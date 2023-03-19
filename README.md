@@ -4,7 +4,7 @@
 # Depurando o código
  O algoritmo implementado utiliza o RSA para criptografar e descriptografar uma mensagem, seguindo os passos definidos na descrição do problema.
 
- O código começa importando as bibliotecas necessárias: *random*, *sympy* e *gcd* do módulo *math*.
+ O código começa importando as bibliotecas necessárias: <span style="color: green">*random*</span>, <span style="color: green">*sympy*</span> e <span style="color: blue">*gcd*</span> do módulo <span style="color: green">*math*</span>.
 
  O passo 1 é implementado em um *loop while* que gera dois números primos aleatórios. Isso é feito utilizando a função *randint()* da biblioteca *random*, que gera um número aleatório entre os limites definidos. Para verificar se o número é primo, é utilizada a função *isprime()* da biblioteca *sympy*.
 
