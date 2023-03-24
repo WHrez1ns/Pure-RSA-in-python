@@ -1,6 +1,6 @@
 ##########################################################################################
 # Construa  o  algoritmo com  a  linguagem  de  programação  de  sua  preferência,  ele  #
-# deve escolher dois valores aleatórios para p e q, geraras chaves pública e privada de  #
+# deve escolher dois valores aleatórios para p e q, gerar chaves pública e privada de    #
 # acordo com os quatropassos apresentados. O algoritmo deve ser capaz de criptografar e  #
 # decriptografar a frase “The information security is of significant importanceto ensure #
 # the privacy of communications”.                                                        #
@@ -91,7 +91,7 @@ while len(lista_primos) < 2:
     primo = 0
     while not sympy.isprime(primo):
         # obs: o correto seria elevado a 6 e 7 para gerarem numeros maiores, mas o meu processador é bem do ruim então para rodar eu diminui :D
-        primo = random.randint(10**2, 10**3)
+        primo = random.randint(10**6, 10**7)
     lista_primos.append(primo)
 
 print("Calculando...")
