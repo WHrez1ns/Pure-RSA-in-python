@@ -21,61 +21,41 @@ import sympy  # importando a biblioteca Sympy para trabalhar com matemática sim
 # importando o gcd do math (Greatest Common Divisor) para realizar o cálculo de maior divisor comum
 from math import gcd
 
-# Passo 1
-
 # Essa é a função que gera as chaves pública e privada. Ela recebe dois números primos p e q, calcula n como o produto de p e q e z como o produto de p-1 e q-1.
-
-
 def gerar_chaves(p, q):
     n = p * q
     z = (p - 1) * (q - 1)
 
-    # Escolher um número aleatório e coprime com Z
     e = random.randrange(1, z)
     while gcd(e, z) != 1:
         e = random.randrange(1, z)
 
-    # Calcular o inverso multiplicativo de E em relação a Z
     d = inverso_modular(e, z)
-
-    # Retornar as chaves pública e privada
+    
     return ((n, e), (n, d))
 
 
 # Função Criptografar
-
-
 def criptografar(mensagem, chave_publica):
     n, e = chave_publica
     criptograma = [(ord(char) ** e) % n for char in mensagem]
     return criptograma
 
-
 # Função Decriptografar
-
-
 def descriptografar(criptograma, chave_privada):
     n, d = chave_privada
     mensagem = [chr((char ** d) % n) for char in criptograma]
     return ''.join(mensagem)
 
-
 # Calculo do inverso modular
-
-
 def inverso_modular(a, m):
-    # Verificar se a e m são coprimos
     if gcd(a, m) != 1:
         return None
-
-    # Encontrar o inverso multiplicativo de A em relação a M utilizando o algoritmo de Euclides estendido
+    
     _, x, _ = euclides_estendido(a, m)
     return x % m
 
-
 # Algoritmo de euclides estendido
-
-
 def euclides_estendido(a, b):
     if a == 0:
         return b, 0, 1
@@ -83,9 +63,8 @@ def euclides_estendido(a, b):
         gcd, x, y = euclides_estendido(b % a, a)
         return gcd, y - (b // a) * x, x
 
-
+# "main"   
 lista_primos = []
-
 print("Gerando N primos...")
 while len(lista_primos) < 2:
     primo = 0
