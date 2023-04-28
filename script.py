@@ -42,7 +42,7 @@ def criptografar(mensagem, chave_publica):
     return criptograma
 
 # Função Decriptografar
-def descriptografar(criptograma, chave_privada):
+def decriptografar(criptograma, chave_privada):
     n, d = chave_privada
     mensagem = [chr((char ** d) % n) for char in criptograma]
     return ''.join(mensagem)
@@ -81,7 +81,7 @@ chave_publica, chave_privada = gerar_chaves(p, q)
 print("Gerando...")
 criptograma = criptografar(mensagem, chave_publica)
 print("Criptografia...")
-mensagem_decifrada = descriptografar(criptograma, chave_privada)
+mensagem_decifrada = decriptografar(criptograma, chave_privada)
 print("Decriptografia...")
 
 print("---------------------------------------------------------------------------------------------------------")
